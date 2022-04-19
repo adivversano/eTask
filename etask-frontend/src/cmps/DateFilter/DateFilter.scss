@@ -1,0 +1,46 @@
+@import '../../styles/setup/variables.scss';
+
+.date-filter-container {
+    position: relative;
+    .date-filter-btn {
+        &.active {
+            span {
+                color: $clr1;
+            }
+            &::after {
+                clip-path: polygon(240px 0, 0 0, 0 0, 28px 206px);
+            }
+        }
+    }
+    .title {
+        margin-bottom: 5px;
+    }
+    .date-filter-wrapper {
+        position: absolute;
+        margin-top: 5px;
+        right: 0;
+        z-index: 5;
+        background-color: $clr2;
+        color: #e6e6e6;
+        padding: 10px 10px;
+        border-radius: $brd;
+        box-shadow: 0 0 9px 4px #0000002e;
+        .date-filter-by-container {
+            font-size: 12px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 5px;
+        }
+        .date-to {
+            margin-bottom: 5px;
+        }
+        .clear-btn {
+            border-radius: $brd;
+            padding: 5px 10px;
+            transition: background-color .3s;
+            &:hover {
+                background-color: $clr1;
+            }
+        }
+    }
+}

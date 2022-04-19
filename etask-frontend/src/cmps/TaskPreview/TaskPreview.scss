@@ -1,0 +1,53 @@
+@import '../../styles/setup/variables.scss';
+@import '../../styles/setup/functions.scss';
+@import '../../styles/setup/mixins.scss';
+
+.task {
+    display: flex;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-size: rem(12px);
+    @include for-narrow-layout {
+        font-size: rem(14px);
+    }
+    cursor: pointer;
+    &:hover {
+        background-color: #b6c6eb;
+    }
+    > span {
+        padding: 10px 0;
+        min-width: 50px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        &.task-status {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            font-size: rem(12px);
+            .done,.in-progress,.not-started {
+                padding: 0 5px;
+                border-radius: $brd;
+                line-height: rem(19px);
+                color: $clr1;
+            }
+            .done {
+                background-color: #0aaf0a;
+            }
+            .in-progress {
+                background-color: $clr2;
+            }
+            .not-started {
+                background-color: #717171;
+            }
+        }
+    }
+    > span:not(:first-child) {
+        flex: 2;
+    }
+    > span:first-child {
+        flex: 1;
+    }
+    .title {
+        white-space: nowrap;
+    }
+}

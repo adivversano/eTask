@@ -1,0 +1,79 @@
+@import '../../styles/setup/variables.scss';
+@import '../../styles/setup/functions.scss';
+
+.select {
+    cursor: default;
+    user-select: none;
+
+    .menu {
+        visibility: hidden;
+        &.visible {
+            visibility: visible;
+        }
+    }
+    ///// STYLES /////
+    &.secondary {
+        width: fit-content;
+        position: relative;
+        min-width: 120px;
+        font-size: rem(14px);
+        .header-selected {
+            position: relative;
+            &.active {
+                box-shadow: inset 0 -1px 0px 0px #0000007d;
+                > input {
+                    cursor: unset;
+                    border-radius: $brd-up;
+                }
+                &:after {
+                    transform: rotate(180deg);
+                    top: 0;
+                }
+            }
+            &:after {
+                position: absolute;
+                content: "";
+                right: 12px;
+                top: 7px;
+                border-radius: 50%;
+                border: 7px solid transparent;
+                transition: top .2s;
+                border-color: #424242c8 transparent transparent transparent;
+                pointer-events: none;
+            }
+            > input {
+                -webkit-appearance: none;
+                text-align: left;
+                height: 100%;
+                width: 100%;
+                border-radius: $brd;
+                background-color: $clr1;
+                padding: 10px 30px 10px 10px;
+                transition: border 0.3s;
+                position: relative;
+            }
+        }
+        .menu {
+            position: absolute;
+            width: 100%;
+            background-color: $clr1;
+            z-index: 1;
+            border-radius: $brd-down;
+            padding-bottom: 10px;
+            > li {
+                cursor: pointer;
+                padding: 10px 0 10px 10px;
+                transition: background-color .3s;
+                &.selected {
+                    background-color: #9c9c9c7c;
+                }
+                &:hover {
+                    background-color: #b2b2b27c;
+                }
+                &:last-child {
+                    border-radius: $brd-down;
+                }
+            }
+        }
+    }
+}

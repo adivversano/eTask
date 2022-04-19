@@ -1,0 +1,66 @@
+@import "../../styles/setup/variables.scss";
+@import "../../styles/setup/functions.scss";
+@import "../../styles/setup/mixins.scss";
+
+.home {
+    margin-top: 10px;
+    padding: 0 10px;
+    @include for-narrow-layout {
+        padding: unset;
+    }
+    .information {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        .pie-info {
+            color: $clr2;
+            font-weight: none;
+        }
+    }
+    .tasks-options {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        .add-task-btn,
+        .date-filter-btn {
+            color: #3772ff;
+            padding: 15px 30px;
+            font-weight: 700;
+            border: 1px solid #3772ff;
+            border-radius: 2px;
+            background-color: transparent;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s, transform 0.1s;
+            &::after {
+                content: "";
+                width: 200px;
+                height: 70px;
+                position: absolute;
+                top: 0;
+                left: -10px;
+                z-index: -1;
+                background-color: #3772ff;
+                transition: clip-path 0.35s;
+                clip-path: polygon(0 0, 0 0, 0 0, 28px 206px);
+            }
+            &:hover {
+                span {
+                    color: #e6e8e6;
+                }
+                &::after {
+                    clip-path: polygon(240px 0, 0 0, 0 0, 28px 206px);
+                }
+            }
+            &:active {
+                transform: scale(0.97);
+            }
+        }
+    }
+    .task-pagination {
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: flex-end;
+    }
+}

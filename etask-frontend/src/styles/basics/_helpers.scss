@@ -1,0 +1,82 @@
+
+// FLEX
+
+.flex {
+    display: flex;
+
+    > *.full {
+        flex: 1;
+    }
+    
+    &.column {
+        flex-direction: column;
+    }
+    &.justify-center {
+        justify-content: center;
+    }
+    &.justify-space-between {
+        justify-content: space-between;
+    }
+    &.align-center {
+        align-items: center;
+    }
+    &.wrap {
+        flex-wrap: wrap;
+    }
+    &.column-reverse {
+        flex-direction: column-reverse;
+    }
+    &.justify-flex-end {
+        justify-content: flex-end;
+    }
+    &.align-flex-start {
+        align-items: flex-start;
+    }
+    &.full{
+        flex-grow: 1;
+    }
+}
+
+
+// CLEANERS
+
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.clean-btn {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+// datelocal-time container cleaner
+.date {
+    position: relative;
+    width: fit-content;
+    input[type="datetime-local"] {
+        height: 45px;
+        user-select: none;
+        border: none;
+        border-radius: 2px;
+        background-color: #e6e6e6;
+        padding: 10px 0;
+        &::-webkit-calendar-picker-indicator {
+            background: transparent;
+            bottom: 0;
+            cursor: pointer;
+            height: auto;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: auto;
+        }
+        &::-webkit-datetime-edit-fields-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

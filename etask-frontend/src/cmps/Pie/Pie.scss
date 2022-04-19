@@ -1,0 +1,21 @@
+@import '../../styles/setup/variables.scss';
+
+.pie {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #717171;
+    margin-right: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $clr1;
+    > h4 {
+        font-size: rem(22px);
+        margin-left: 10px;
+    }
+    > span {
+        font-size: rem(14px);
+    }
+}

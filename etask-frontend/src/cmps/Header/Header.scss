@@ -1,0 +1,20 @@
+@import "../../styles/setup/variables.scss";
+@import "../../styles/setup/functions.scss";
+@import "../../styles/setup/mixins.scss";
+
+header {
+    background-color: $clr2;
+    .header-wrapper {
+        .logo {
+            display: flex;
+            align-items: center;
+            height: 55px;
+            color: $clr1;
+            font-size: rem(22px);
+        }
+        padding: 0 10px;
+        @include for-narrow-layout {
+            padding: unset;
+        }
+    }
+}
